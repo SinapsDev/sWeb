@@ -1,16 +1,16 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import Navbar from './components/navbar/index'
-import Home from './components/home';
+import Navbar from './components/Navbar/Navbar'
+import Home from './components/Home';
 
 const Routers: React.FC = () => {
     return (
         <Router>
             <Navbar/>
-            <Routes>
-                <Route path="/" element={<Home/>}/>
-            </Routes>
+            <Switch>
+                <Route path="/" component={Home}/>
+            </Switch>
         </Router>
     )
 }
