@@ -22,43 +22,41 @@ function RightNav(props: Props) {
     return (
         <Router>
             <S.Ul open={props.open}>
-                <h1>Server</h1>
-
                 <NavLink
                     to='/menu1'
                     activeStyle={{
                         fontWeight: 'bold',
-                        color: '#0DADEA',
+                        color: '#52be80',
                     }}
                 >
-                    <S.Li>Menu 1</S.Li>
+                    <S.Li>ACCUEIL</S.Li>
                 </NavLink>
                 <NavLink
                     to='/menu2'
                     activeStyle={{
                         fontWeight: 'bold',
-                        color: '#0DADEA',
+                        color: '#145a32',
                     }}
                 >
-                    <S.Li>Menu 2</S.Li>
+                    <S.Li>WIKI</S.Li>
                 </NavLink>
                 <NavLink
                     to='/menu3'
                     activeStyle={{
                         fontWeight: 'bold',
-                        color: '#0DADEA',
+                        color: '#145a32',
                     }}
                 >
-                    <S.Li>Menu 3</S.Li>
+                    <S.Li>WHITELIST</S.Li>
                 </NavLink>
                 <NavLink
                     to='/menu4'
                     activeStyle={{
                         fontWeight: 'bold',
-                        color: '#0DADEA',
+                        color: '#145a32',
                     }}
                 >
-                    <S.Li>Menu 4</S.Li>
+                    <S.Li>SE CONNECTER</S.Li>
                 </NavLink>
             </S.Ul>
 

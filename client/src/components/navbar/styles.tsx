@@ -13,7 +13,7 @@ export const StyledBurger = styled.div<INav>`
   z-index: 20;
   display: none;
   cursor: pointer;
-  font-family: 'Zilla Slab', sans-serif;
+  font-family: 'Roboto', sans-serif;
   @media (max-width: 768px) {
     display: flex;
     justify-content: space-around;
@@ -42,11 +42,10 @@ export const Menus = styled.div<INav>`
 `
 
 export const Nav = styled.nav`
-  font-family: 'Zilla Slab', sans-serif;
+  font-family: 'Roboto', sans-serif;
   height: 100%;
   display: flex;
   justify-content: space-between;
-  background-color: #fdfdfdfa;
   align-items: center;
   position: relative;
   @media (max-width: 678px) {
@@ -55,26 +54,27 @@ export const Nav = styled.nav`
 `
 
 export const Ul = styled.ul<INav>`
-  font-family: 'Zilla Slab', sans-serif;
+  font-family: 'Roboto', sans-serif;
   list-style: none;
   display: flex;
   flex-flow: row nowrap;
   position: absolute;
-  width: 90%;
+  width: 100%;
   top: 0;
   justify-content: flex-end;
   margin-top: 0px;
   align-items: center;
   font-size: 18px;
-  height: 110px;
-  margin-left: 20px;
+  background-color: #1c2833;
+  padding-right: 3%;
+  height: 12vh;
   a {
     text-decoration: none;
     text-transform: none;
-    color: #000;
+    color: #d5d8dc;
     cursor: pointer;
     &:hover {
-      color: #0DADEA;
+      color: #58d68d;
     }
   }
   @media (max-width: 768px) {

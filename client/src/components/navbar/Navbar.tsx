@@ -10,9 +10,8 @@ type Props = {
 export default function Navbar(props: Props) {
     return (
         <>
-            <S.Nav>
-                <h1>Name</h1>
-            </S.Nav>
+            <h1>Server Name</h1>
+            <S.Nav />
             <Burger />
             {props.children}
         </>
