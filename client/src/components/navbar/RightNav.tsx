@@ -50,7 +50,7 @@ function RightNav(props: Props) {
                         color: '#52be80',
                     }}
                 >
-                    <S.Li>SE CONNECTER</S.Li>
+                    <S.Li>S'IDENTIFIER</S.Li>
                 </NavLink>
                 <NavLink
                     to='/menu5'
@@ -63,31 +63,6 @@ function RightNav(props: Props) {
                     <S.Li2>S'INSCRIRE</S.Li2>
                 </NavLink>
             </S.Ul>
-
-            <Switch>
-                <Route exact path='/menu1'>
-                    <S.Icon>
-                        <h1>Test</h1>
-                    </S.Icon>
-                </Route>
-                <Route exact path='/menu2'>
-                    <S.Icon>
-                        <h1>Test</h1>
-                    </S.Icon>
-                </Route>
-                <Route exact path='/menu3'>
-                    <S.Icon>
-                        <h1>Test</h1>
-                    </S.Icon>
-                </Route>
-                <Route exact path='/menu4'>
-                    <S.Icon>
-                        <h1>Test</h1>
-                    </S.Icon>
-                </Route>
-
-                <Redirect to='/menu1' />
-            </Switch>
         </Router>
     );
 }

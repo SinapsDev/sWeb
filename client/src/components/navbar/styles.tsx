@@ -24,8 +24,9 @@ export const StyledBurger = styled.div<INav>`
 export const Menus = styled.div<INav>`
     width: 2rem;
     height: 0.25rem;
-    background-color: #000;
+    background-color: #d5d8dc;
     border-radius: 10px;
+    color: #fff;
     transform-origin: 1px;
     transition: all 0.3s linear;
     cursor: pointer;
@@ -46,6 +47,7 @@ export const Nav = styled.nav`
   height: 65px;
   display: flex;
   justify-content: space-between;
+  background-color: #1c2833;
   align-items: center;
   position: relative;
   @media (max-width: 678px) {
@@ -79,13 +81,14 @@ export const Ul = styled.ul<INav>`
   }
   @media (max-width: 768px) {
     flex-flow: column nowrap;
-    background-color: #fdfdfdfa;
+    background-color: # 1c2833;
     position: fixed;
     transform: ${(props) => props.open ? 'translateX(0)' : 'translateX(100%)'};
     top: -16px;
     right: 0;
     height: 100%;
     width: 180px;
+    color: #c52be80;
     padding-top: 3.5rem;
     transition: transform 0.3s ease-in-out;
     z-index: 9;
@@ -96,32 +99,26 @@ export const Ul = styled.ul<INav>`
 export const Li = styled.li`
   padding: 18px 20px;
   outline: none;
+  color: #c52be80;
   @media (max-width: 768px) {
-    color: #000;
-    margin-right: 34px;
+  color: #c52be80;
     &:hover {
-      color: #0DADEA;
+      color: #52be80;
     }
 }
 `
 
-//margin-left: 40px;
-//border: 3px solid #52be80;
-//outline: none;
-//border-radius: 8px
-
 export const Li2 = styled.li`
   padding: 10px 10px;
-  margin-left: 2;
   border: 3px solid #52be80;
-  margin-left: 40px;
   border-radius: 8px;
+  color: #c52be80;
   outline: none;
   @media (max-width: 768px) {
-    color: #000;
-    margin-right: 34px;
+    margin-top: 20px;
+    color: #c52be80;
     &:hover {
-      color: #0DADEA;
+      color: #52be80;
     }
 }
 `
