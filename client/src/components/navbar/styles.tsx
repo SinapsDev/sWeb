@@ -43,7 +43,7 @@ export const Menus = styled.div<INav>`
 
 export const Nav = styled.nav`
   font-family: 'Roboto', sans-serif;
-  height: 100%;
+  height: 65px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -67,7 +67,7 @@ export const Ul = styled.ul<INav>`
   font-size: 18px;
   background-color: #1c2833;
   padding-right: 3%;
-  height: 12vh;
+  height: 65px;
   a {
     text-decoration: none;
     text-transform: none;
@@ -94,7 +94,28 @@ export const Ul = styled.ul<INav>`
 `
 
 export const Li = styled.li`
-  padding: 18px 10px;
+  padding: 18px 20px;
+  outline: none;
+  @media (max-width: 768px) {
+    color: #000;
+    margin-right: 34px;
+    &:hover {
+      color: #0DADEA;
+    }
+}
+`
+
+//margin-left: 40px;
+//border: 3px solid #52be80;
+//outline: none;
+//border-radius: 8px
+
+export const Li2 = styled.li`
+  padding: 10px 10px;
+  margin-left: 2;
+  border: 3px solid #52be80;
+  margin-left: 40px;
+  border-radius: 8px;
   outline: none;
   @media (max-width: 768px) {
     color: #000;
@@ -110,6 +131,17 @@ export const Logo = styled.img`
   width: 160px;
   height: 70px;
   object-fit: contain;
+  @media (max-width: 1250px) {
+    margin: 20px 50px 20px 5%;
+  }
+`
+
+export const Title = styled.h1 `
+  font-family: 'Roboto', sans-serif;
+  font-size: 30px;
+  margin-left: 4%;
+  z-index: 99;
+  color: #d5d8dc;
   @media (max-width: 1250px) {
     margin: 20px 50px 20px 5%;
   }

@@ -1,11 +1,5 @@
 import * as S from './styles';
 
-// import Logo from '../../assets/logo.png';
-// import IconReact from '../../assets/react.svg';
-// import IconMegamen from '../../assets/megamen.png';
-// import IconMario from '../../assets/mario.png';
-// import IconTurtle from '../../assets/turtle.png';
-
 import {
     BrowserRouter as Router,
     Switch,
@@ -35,7 +29,7 @@ function RightNav(props: Props) {
                     to='/menu2'
                     activeStyle={{
                         fontWeight: 'bold',
-                        color: '#145a32',
+                        color: '#52be80',
                     }}
                 >
                     <S.Li>WIKI</S.Li>
@@ -44,7 +38,7 @@ function RightNav(props: Props) {
                     to='/menu3'
                     activeStyle={{
                         fontWeight: 'bold',
-                        color: '#145a32',
+                        color: '#52be80',
                     }}
                 >
                     <S.Li>WHITELIST</S.Li>
@@ -53,10 +47,20 @@ function RightNav(props: Props) {
                     to='/menu4'
                     activeStyle={{
                         fontWeight: 'bold',
-                        color: '#145a32',
+                        color: '#52be80',
                     }}
                 >
                     <S.Li>SE CONNECTER</S.Li>
+                </NavLink>
+                <NavLink
+                    to='/menu5'
+                    activeStyle={{
+                        fontWeight: 'bold',
+                        color: '#52be80',
+                    }}
+                >
+
+                    <S.Li2>S'INSCRIRE</S.Li2>
                 </NavLink>
             </S.Ul>
 
