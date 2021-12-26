@@ -114,6 +114,7 @@ export const Li2 = styled.li`
   border-radius: 8px;
   color: #c52be80;
   outline: none;
+  margin-left: 4rem;
   @media (max-width: 768px) {
     margin-top: 20px;
     color: #c52be80;

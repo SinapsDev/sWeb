@@ -11,7 +11,7 @@ export default function Navbar(props: Props) {
     return (
         <>
             <S.Nav>
-                <S.Title>Server Name</S.Title>
+                <S.Title>Limitless Life</S.Title>
             </S.Nav>
             <Burger />
             {props.children}
