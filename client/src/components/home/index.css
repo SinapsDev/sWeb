@@ -1,0 +1,54 @@
+.cinematic-video {
+    height: 92vh;
+    width: 100%;
+    object-fit: cover;
+    position: absolute;
+}
+
+.black-opacity {
+    height: 92vh;
+    width: 100%;
+    position: absolute;
+    z-index: 2;
+    background-color: black;
+    opacity: 0.7;
+}
+
+.main-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 20rem;
+    width: 70%;
+    position: absolute;
+    z-index: 3;
+}
+
+.main-block .server-title {
+    margin: 0 auto;
+    font-weight: 700;
+    font-size: 3.2rem;
+    color: #52be80;
+    -webkit-text-stroke: 1px black;
+}
+
+.main-block .main-text {
+    color: #d5d8dc;
+    text-align: center;
+    margin: 2rem 0;
+    font-size: 1.7rem;
+    font-weight: 300;
+}
+
+.main-block .btn-container {
+    width: 100%;
+    gap: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
