@@ -44,7 +44,7 @@ export const Menus = styled.div<INav>`
 
 export const Nav = styled.nav`
   font-family: 'Roboto', sans-serif;
-  height: 4rem;
+  height: 8vh;
   display: flex;
   justify-content: space-between;
   background-color: #1c2833;
@@ -69,7 +69,7 @@ export const Ul = styled.ul<INav>`
   font-size: 18px;
   background-color: #1c2833;
   padding-right: 3%;
-  height: 4rem;
+  height: 8vh;
   a {
     text-decoration: none;
     text-transform: none;
