@@ -84,7 +84,7 @@ export const Ul = styled.ul<INav>`
     background-color: # 1c2833;
     position: fixed;
     transform: ${(props) => props.open ? 'translateX(0)' : 'translateX(100%)'};
-    top: -16px;
+    top: 50px;
     right: 0;
     height: 100%;
     width: 180px;
