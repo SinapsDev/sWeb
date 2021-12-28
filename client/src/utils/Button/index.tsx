@@ -11,6 +11,8 @@ interface Props {
     Height?: string;
     Size?: string;
     Weight?: string;
+    MobileHeight?: string;
+    MobileWidth?: string;
 }
 
 export const Button = styled.div<Props>`
@@ -27,4 +29,8 @@ export const Button = styled.div<Props>`
     align-items: center;
     border-radius: 7px;
     position: relative;
+    @media (max-width: 768px) {
+        height: ${(props) => props.MobileHeight ? props.MobileHeight : '8vh'};
+        width: ${(props) => props.MobileWidth ? props.MobileWidth : '80%'};
+    }
 `
