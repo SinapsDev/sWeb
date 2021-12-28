@@ -44,7 +44,7 @@ export const Menus = styled.div<INav>`
 
 export const Nav = styled.nav`
   font-family: 'Roboto', sans-serif;
-  height: 65px;
+  height: 4rem;
   display: flex;
   justify-content: space-between;
   background-color: #1c2833;
@@ -69,7 +69,7 @@ export const Ul = styled.ul<INav>`
   font-size: 18px;
   background-color: #1c2833;
   padding-right: 3%;
-  height: 65px;
+  height: 4rem;
   a {
     text-decoration: none;
     text-transform: none;
@@ -117,11 +117,12 @@ export const Li2 = styled.li`
   margin-left: 4rem;
   @media (max-width: 768px) {
     margin-top: 20px;
+    margin-left: 0;
     color: #c52be80;
     &:hover {
       color: #52be80;
     }
-}
+  }
 `
 
 export const Logo = styled.img`
