@@ -11,6 +11,7 @@ interface Props {
     Height?: string;
     Size?: string;
     Weight?: string;
+    Margin?: string;
     MobileHeight?: string;
     MobileWidth?: string;
 }
@@ -23,6 +24,7 @@ export const Button = styled.div<Props>`
     background-color: ${(props) => props.Background};
     font-size: ${(props) => props.Size ? props.Size : '1.2rem'};
     font-weight: ${(props) => props.Weight ? props.Weight : '500'};
+    margin: ${(props) => props.Margin ? props.Margin : '0'};
     cursor: pointer;
     justify-content: center;
     font-family: 'Roboto', sans-serif;
