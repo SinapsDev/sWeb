@@ -9,7 +9,7 @@ const Routers: React.FC = () => {
         <Router>
             <Navbar/>
             <Switch>
-                <Route path="/" component={Home}/>
+                <Route path="/" exact component={Home}/>
             </Switch>
         </Router>
     )
