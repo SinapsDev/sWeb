@@ -49,6 +49,31 @@ app.post('/register', (req, res) => {
   }
 }); 
 
+app.post('/login', (req, res) => {
+  const { username, password } = req.body;
+  db.query('SELECT * FROM users WHERE username = ?', [username], (err, result) => {
+    if (err) {
+      console.log(err);
+    } else {
+      if (result.length === 0) {
+        res.send("Username does not exist");
+      } else {
+        bcrypt.compare(password, result[0].password, (err, response) => {
+          if (err) {
+            console.log(err);
+          } else {
+            if (response) {
+              res.send("Success");
+            } else {
+              res.send("Incorrect password");
+            }
+          }
+        })
+      }
+    }
+  })
+});
+
 app.listen(3001, () => {
     console.log('Website API is running property.')
 })
