@@ -5,7 +5,7 @@ import Cinematic from "../../assets/cinematic.mp4";
 
 import './index.css';
 
-const Home: React.FC = () => {
+const LandingPage: React.FC = () => {
     const history = useHistory();
     return (
         <>
@@ -25,4 +25,4 @@ const Home: React.FC = () => {
     )
 }
 
-export default Home;
+export default LandingPage;
