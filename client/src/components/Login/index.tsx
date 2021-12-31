@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState, useEffect } from 'react';
 import Axios from 'axios';
 import { Button } from '../../utils/Button';
 import './index.css'
@@ -7,6 +7,8 @@ import Cinematic from "../../assets/cinematic.mp4";
 const Login: React.FC = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+
+    Axios.defaults.withCredentials = true;
 
     const sumbitLogin = () => {
         if (username !== '' && password !== '') {
@@ -20,6 +22,12 @@ const Login: React.FC = () => {
             })
         }
     }
+
+    useEffect(() => {
+        Axios.get('http://localhost:3001/login').then(res => {
+            console.log(res);
+        })
+    }, [])
 
     return (
         <>
