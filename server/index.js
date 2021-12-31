@@ -3,72 +3,51 @@ const app = express();
 const mysql = require("mysql");
 const cors = require("cors");
 
-app.use(cors());
+const bcrypt = require("bcrypt");
+const saltRounds = 10;
+
 app.use(express.json());
+app.use(cors());
 
 const db = mysql.createConnection({
   user: "root",
   host: "localhost",
-  password: "password",
+  password: "",
   database: "sWeb",
 });
 
-app.post("/create", (req, res) => {
-  const name = req.body.name;
-  const age = req.body.age;
-  const country = req.body.country;
-  const position = req.body.position;
-  const wage = req.body.wage;
+app.post('/register', (req, res) => {
+  const { username, email, password, confirmPassword } = req.body;
 
-  db.query(
-    "INSERT INTO employees (name, age, country, position, wage) VALUES (?,?,?,?,?)",
-    [name, age, country, position, wage],
-    (err, result) => {
-      if (err) {
-        console.log(err);
-      } else {
-        res.send("Values Inserted");
-      }
-    }
-  );
-});
-
-app.get("/employees", (req, res) => {
-  db.query("SELECT * FROM employees", (err, result) => {
-    if (err) {
-      console.log(err);
-    } else {
-      res.send(result);
-    }
-  });
-});
-
-app.put("/update", (req, res) => {
-  const id = req.body.id;
-  const wage = req.body.wage;
-  db.query(
-    "UPDATE employees SET wage = ? WHERE id = ?",
-    [wage, id],
-    (err, result) => {
-      if (err) {
-        console.log(err);
-      } else {
-        res.send(result);
-      }
-    }
-  );
-});
-
-app.delete("/delete/:id", (req, res) => {
-  const id = req.params.id;
-  db.query("DELETE FROM employees WHERE id = ?", id, (err, result) => {
-    if (err) {
-      console.log(err);
-    } else {
-      res.send(result);
-    }
-  });
-});
+  if (password === confirmPassword) {
+    bcrypt.hash(password, saltRounds, (err, hash) => {
+       if (err) {
+         console.log(err);
+       } else {
+        db.query('SELECT username FROM users WHERE username = ?', [username], (err, result) => {
+          if (err) {
+            console.log(err);
+          } else {
+            if (result.length === 0) {
+              console.log(hash)
+              db.query('INSERT INTO users (email, username, password) VALUES (?, ?, ?)', [email, username, hash], (err, result) => {
+                if (err) {
+                  console.log(err);
+                } else {
+                  res.send("Values Inserted");
+                };
+              })
+            } else {
+              res.send("Username already exists");
+            }
+          }
+        })
+       }
+    })
+  } else {
+    res.send("Passwords do not match");
+  }
+}); 
 
 app.listen(3001, () => {
     console.log('Website API is running property.')
