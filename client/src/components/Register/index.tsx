@@ -14,7 +14,7 @@ const Register: React.FC = () => {
                         <input type="text" name="username" placeholder='Entrez votre username' className='register-input' />
                         <input type="password" name="password" placeholder='Entrez votre mot de passe' className='register-input' />
                         <input type="password" name="confirmpassword" placeholder='Confirmer votre mot de passe' className='register-input' />
-                        <Button Margin='2rem 0 0 0' Background='#1c2833' Color='#d5d8dc' Width='100%' Height='60px'>S'INSCRIRE</Button>
+                        <Button Margin='2rem auto' Background='#1c2833' Color='#d5d8dc' Width='100%' Height='60px'>S'INSCRIRE</Button>
                     </div>
                 </div>
                 <div className="right-container">
