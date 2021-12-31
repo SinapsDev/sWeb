@@ -72,7 +72,11 @@ app.post('/register', (req, res) => {
 
 app.get('/login', (req, res) => {
   if (req.session.user) {
-    res.send({loggedIn: true, user: req.session.user});
+    let user = {
+      username: req.session.user.username,
+      email: req.session.user.email
+    }
+    res.send({loggedIn: true, user: user});
   } else {
     res.send({loggedIn: false});
   }
