@@ -1,18 +1,35 @@
-import React from 'react';
+import React, {useState} from 'react';
+import Axios from 'axios';
 import { Button } from '../../utils/Button';
 import './index.css'
 import Cinematic from "../../assets/cinematic.mp4";
 
 const Login: React.FC = () => {
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+
+    const sumbitLogin = () => {
+        if (username !== '' && password !== '') {
+            Axios.post('http://localhost:3001/login', {
+                username,
+                password
+            }).then(res => {
+                console.log(res.data)
+            }).catch(err => {
+                console.log(err)
+            })
+        }
+    }
+
     return (
         <>
             <div className="main-container">
                 <div className="left-container">
                     <h1 className='login-title'>SE CONNECTER</h1>
                     <div className="login-form">
-                        <input type="text" name="username" placeholder='Entrez votre username' className='login-input' />
-                        <input type="password" name="password" placeholder='Entrez votre mot de passe' className='login-input' />
-                        <Button Margin='2rem auto' Background='#1c2833' Color='#d5d8dc' Width='100%' Height='60px'>SE CONNECTER</Button>
+                        <input onChange={(e:any) => setUsername(e.target.value)} type="text" name="username" placeholder='Entrez votre username' className='login-input' />
+                        <input onChange={(e:any) => setPassword(e.target.value)} type="password" name="password" placeholder='Entrez votre mot de passe' className='login-input' />
+                        <Button onClick={() => sumbitLogin()} Margin='2rem auto' Background='#1c2833' Color='#d5d8dc' Width='100%' Height='60px'>SE CONNECTER</Button>
                     </div>
                 </div>
                 <div className="right-container">
