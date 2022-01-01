@@ -1,12 +1,6 @@
 import * as S from './styles';
 
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    NavLink,
-    Redirect,
-} from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 type Props = {
     open: boolean;
