@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require("express");
 const app = express();
 const mysql = require("mysql");
@@ -6,9 +7,14 @@ const cors = require("cors");
 const bodyParser = require("body-parser");
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
+const passport = require('passport');
+const DiscordStrategy = require('./strategies/discordStrategy');
 
 const bcrypt = require("bcrypt");
 const saltRounds = 10;
+
+// Routes
+const discordRoute = require("./routes/discord");
 
 app.use(express.json());
 app.use(cors({
@@ -30,12 +36,17 @@ app.use(session({
     }
 }));
 
+app.use(passport.initialize());
+app.use(passport.session());
+
 const db = mysql.createConnection({
   user: "root",
   host: "localhost",
   password: "",
   database: "sWeb",
 });
+
+app.use('/discord', discordRoute);
 
 app.post('/register', (req, res) => {
   const { username, email, password, confirmPassword } = req.body;
@@ -97,7 +108,6 @@ app.post('/login', (req, res) => {
           } else {
             if (response) {
               req.session.user = result[0]
-              console.log(req.session.user)
               res.send(result[0]);
             } else {
               res.send("Incorrect password");

@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 import Axios from 'axios';
 import { Button } from '../../utils/Button';
 import './index.css'
 import Cinematic from "../../assets/cinematic.mp4";
 
 const Login: React.FC = () => {
+    const history = useHistory();
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
 
@@ -21,8 +23,10 @@ const Login: React.FC = () => {
                 console.log(err)
             })
         }
+
     }
 
+    
     useEffect(() => {
         Axios.get('http://localhost:3001/login').then(res => {
             console.log(res);
